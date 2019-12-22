@@ -1,0 +1,5 @@
+SimpleCms\Blog\App\Command\DeletePostCommand:
+  properties:
+    id:
+    - NotNull: ~
+    - Uuid: ~

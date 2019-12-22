@@ -1,0 +1,30 @@
+parameters:
+    locale: 'en'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    SimpleCms\Blog\:
+        resource: '../src/Blog/*'
+        exclude: '../src/Blog/{UI,App}'
+
+    SimpleCms\Blog\App\CommandHandler\:
+        resource: '../src/Blog/App/CommandHandler'
+        tags:
+        - { name: messenger.message_handler, bus: command_bus }
+
+    SimpleCms\Blog\App\QueryHandler\:
+        resource: '../src/Blog/App/QueryHandler'
+        tags:
+        - { name: messenger.message_handler, bus: query_bus }
+
+    SimpleCms\Blog\UI\Controller\:
+        resource: '../src/Blog/UI/Controller'
+        public: true
+        tags: ['controller.service_arguments']
+
+    SimpleCms\Blog\UI\RestNormalizer\:
+        resource: '../src/Blog/UI/RestNormalizer'
+        tags: ['serializer.normalizer']

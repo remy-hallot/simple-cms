@@ -1,0 +1,5 @@
+SimpleCms\Blog\App\Query\FindPostQuery:
+  properties:
+    id:
+    - NotNull: ~
+    - Uuid: ~

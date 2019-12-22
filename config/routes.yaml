@@ -1,0 +1,3 @@
+app:
+  resource: '../src/Blog/UI/Controller/'
+  type: annotation

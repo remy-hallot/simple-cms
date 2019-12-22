@@ -1,0 +1,13 @@
+SimpleCms\Blog\App\Command\UpdatePostCommand:
+  properties:
+    id:
+    - NotNull: ~
+    - Uuid: ~
+    payload:
+    - Collection:
+        fields:
+          title:
+          - NotNull: ~
+          content:
+          - NotNull: ~
+        allowExtraFields: false
